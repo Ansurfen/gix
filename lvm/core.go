@@ -1,8 +1,6 @@
 package lvm
 
 import (
-	"gix/modules/mysql"
-
 	lua "github.com/yuin/gopher-lua"
 )
 
@@ -14,10 +12,6 @@ func NewLuaVM() *LuaVM {
 	return &LuaVM{
 		LState: lua.NewState(),
 	}
-}
-
-func (Lvm *LuaVM) RegisterHooks() {
-	Lvm.PreloadModule("lua-mysql", mysql.MySQLLoader)
 }
 
 func (Lvm *LuaVM) PreHandler(context string) (string, string) {
