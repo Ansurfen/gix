@@ -1,0 +1,12 @@
+serve:
+  port: 8080
+  log: ./info.log
+
+mq:
+ sub:
+  - issue
+  - pr
+  - other
+ cap: 10
+ consume:
+  time: 5
